@@ -1,0 +1,111 @@
+---
+const servicios = [
+  {
+    title: 'TV por Internet',
+    description:
+      'Más de 200 canales en HD y 4K. Incluye acceso a plataformas de streaming y contenido a la carta para toda la familia.',
+    icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z',
+    tag: 'Entretenimiento',
+  },
+  {
+    title: 'Cámaras de Seguridad',
+    description:
+      'Vigila tu hogar o negocio desde tu celular. Instalación de sistemas IP con grabación en la nube y visión nocturna.',
+    icon: 'M15 12a3 3 0 11-6 0 3 3 0 016 0z M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z',
+    tag: 'Protección',
+  },
+  {
+    title: 'Diseño Web Pro',
+    description:
+      'Creamos la presencia digital de tu empresa. Páginas ultra rápidas, optimizadas para Google y adaptables a móviles.',
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4',
+    tag: 'Negocios',
+  },
+  {
+    title: 'Energia Solar',
+    description:
+      'Instalación de paneles solares para hogares y empresas. Ahorro energético y reducción de costos.',
+    icon: 'M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707',
+    tag: 'Energía',
+  },
+]
+---
+
+<section id='servicios' class='py-24 bg-white'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6'>
+    <div
+      class='flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4'
+    >
+      <div class='max-w-2xl'>
+        <h2 class='text-primary font-bold tracking-wide uppercase text-sm'>
+          Más que solo Internet
+        </h2>
+        <p class='mt-2 text-3xl font-extrabold text-[#1E293B] sm:text-4xl'>
+          Soluciones integrales para tu hogar y empresa
+        </p>
+      </div>
+      <div class='hidden md:block'>
+        <div class='h-1 w-24 bg-secondary rounded-full'></div>
+      </div>
+    </div>
+
+    <div class='grid grid-cols-1 gap-8 md:grid-cols-3'>
+      {
+        servicios.map((servicio) => (
+          <div class='group relative p-4 rounded-3xl border border-gray-100 bg-[#F8FAFC] hover:bg-white hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500 overflow-hidden'>
+            <div class='absolute -right-8 -top-8 w-24 h-24 bg-primary/5 rounded-full group-hover:scale-[3] transition-transform duration-700' />
+
+            <div class='relative z-10'>
+              <div class='inline-flex items-center justify-center p-3 bg-white rounded-2xl shadow-sm text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300 mb-6'>
+                <svg
+                  class='w-8 h-8'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='1.5'
+                    d={servicio.icon}
+                  />
+                </svg>
+              </div>
+
+              <span class='block text-xs font-bold text-secondary uppercase tracking-widest mb-2'>
+                {servicio.tag}
+              </span>
+
+              <h3 class='text-2xl font-bold text-[#1E293B] mb-4'>
+                {servicio.title}
+              </h3>
+
+              <p class='text-gray-500 leading-relaxed mb-6'>
+                {servicio.description}
+              </p>
+
+              <a
+                href='#contacto'
+                class='inline-flex items-center text-primary font-bold hover:translate-x-2 transition-transform'
+              >
+                Saber más
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='h-5 w-5 ml-1'
+                  viewBox='0 0 20 20'
+                  fill='currentColor'
+                >
+                  <path
+                    fill-rule='evenodd'
+                    d='M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z'
+                    clip-rule='evenodd'
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

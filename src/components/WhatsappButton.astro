@@ -1,0 +1,39 @@
+---
+const phone = '573156574722'
+const message =
+  'Hola! Me gustaría recibir información sobre los planes de internet de Conectamos.'
+const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`
+---
+
+<a
+  href={whatsappUrl}
+  target='_blank'
+  rel='noopener noreferrer'
+  class='fixed bottom-6 right-6 z-100 group flex items-center'
+  aria-label='Contactar por WhatsApp'
+>
+  <span
+    class='absolute right-16 ml-2 bg-[#1E293B] text-white text-sm px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none shadow-xl'
+  >
+    ¿Necesitas ayuda? ¡Escríbenos!
+  </span>
+
+  <div
+    class='relative flex items-center justify-center w-14 h-14 bg-[#25D366] rounded-full shadow-lg hover:scale-105 transition-transform duration-300'
+  >
+    <span
+      class='absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-75 animate-ping'
+    ></span>
+
+    <svg
+      xmlns='http://www.w3.org/2000/svg'
+      class='w-8 h-8 text-white relative z-10'
+      viewBox='0 0 24 24'
+      fill='currentColor'
+    >
+      <path
+        d='M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.246 2.248 3.484 5.232 3.484 8.412-.003 6.557-5.338 11.892-11.893 11.892-1.997-.001-3.951-.5-5.688-1.448l-6.309 1.656zm6.224-3.92c1.516.903 3.184 1.384 4.895 1.385 5.367 0 9.735-4.367 9.738-9.733.003-5.366-4.365-9.733-9.735-9.733-5.366 0-9.734 4.368-9.737 9.734-.001 1.838.512 3.633 1.484 5.218l-.979 3.573 3.664-.961zm10.589-7.144c-.297-.148-1.759-.868-2.031-.967-.272-.099-.47-.148-.668.148-.198.297-.766.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.148-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z'
+      ></path>
+    </svg>
+  </div>
+</a>

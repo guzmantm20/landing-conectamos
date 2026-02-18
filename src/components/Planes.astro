@@ -1,0 +1,130 @@
+---
+const planes = [
+  {
+    nombre: 'Básico',
+    megas: '30',
+    precio: '37.000',
+    popular: false,
+    caracteristicas: [
+      'Fibra Óptica o Radioenlace',
+      'Router Wi-Fi 5 Dual Band',
+      'Instalación básica',
+      'Soporte técnico',
+    ],
+  },
+  {
+    nombre: 'Family Plus',
+    megas: '50',
+    precio: '47.000',
+    popular: true,
+    caracteristicas: [
+      'Fibra Óptica o Radioenlace',
+      'Router Wi-Fi 5 Dual Band',
+      'Instalación Premium',
+      'Soporte técnico',
+    ],
+  },
+  {
+    nombre: 'Pro Gamer',
+    megas: '80',
+    precio: '60.000',
+    popular: false,
+
+    caracteristicas: [
+      'Fibra Óptica o Radioenlace',
+      'Router Wi-Fi 5 Dual Band',
+      'Prioridad de tráfico Gaming',
+      'Instalación Premium',
+      'Soporte técnico',
+    ],
+  },
+]
+---
+
+<section id='planes' class='py-24 bg-[#F8FAFC]'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+    <div class='text-center mb-16'>
+      <p class='mt-2 text-3xl font-extrabold text-[#1E293B] sm:text-4xl'>
+        Velocidad que se adapta a tu ritmo
+      </p>
+      <p class='mt-4 max-w-2xl mx-auto text-xl text-gray-500'>
+        Sin contratos ocultos ni letras pequeñas. Solo internet de alta calidad.
+      </p>
+    </div>
+
+    <div class='grid grid-cols-1 gap-8 md:grid-cols-3'>
+      {
+        planes.map((plan) => (
+          <div
+            class={`relative hover:-translate-y-1 p-8 bg-white border rounded-2xl shadow-sm flex flex-col transition-all duration-300 hover:shadow-xl ${plan.popular ? 'border-secondary ring-2 ring-secondary scale-105 z-10' : 'border-gray-200'}`}
+          >
+            {plan.popular && (
+              <span class='absolute top-0 right-1/2 translate-x-1/2 -translate-y-1/2 bg-secondary text-white text-xs font-bold uppercase px-3 py-1 rounded-full'>
+                Más Popular
+              </span>
+            )}
+
+            <div class='mb-8'>
+              <h3 class='text-xl font-bold text-[#1E293B]'>{plan.nombre}</h3>
+              <div class='mt-4 flex items-baseline'>
+                <span class='text-5xl font-extrabold tracking-tight text-[#1E293B]'>
+                  {plan.megas}
+                </span>
+                <span class='ml-1 text-2xl font-semibold text-primary'>
+                  Mbps
+                </span>
+              </div>
+              <p class='mt-2 text-gray-500'>Fibra Óptica simétrica</p>
+            </div>
+
+            <div class='flex-1'>
+              <ul class='space-y-4'>
+                {plan.caracteristicas.map((item) => (
+                  <li class='flex items-start'>
+                    <svg
+                      class='h-6 w-6 text-green-500 shrink-0'
+                      fill='none'
+                      viewBox='0 0 24 24'
+                      stroke='currentColor'
+                    >
+                      <path
+                        stroke-linecap='round'
+                        stroke-linejoin='round'
+                        stroke-width='2'
+                        d='M5 13l4 4L19 7'
+                      />
+                    </svg>
+                    <span class='ml-3 text-gray-600'>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div class='mt-8'>
+              <div class='mb-4 text-center'>
+                <span class='text-4xl font-bold text-[#1E293B]'>
+                  ${plan.precio}
+                </span>
+                <span class='text-gray-500 font-medium'>/mes</span>
+              </div>
+              <a
+                href='#'
+                class={`block w-full py-3 px-6 text-center font-bold rounded-xl transition-colors ${
+                  plan.popular
+                    ? 'bg-secondary text-white hover:bg-secondary/90'
+                    : 'bg-primary/10 text-primary hover:bg-primary/20'
+                }`}
+              >
+                Lo quiero ahora
+              </a>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+
+    <p class='text-center mt-12 text-gray-400 text-sm'>
+      * Precios sujetos a factibilidad técnica y zona de cobertura. Incluye IVA.
+    </p>
+  </div>
+</section>

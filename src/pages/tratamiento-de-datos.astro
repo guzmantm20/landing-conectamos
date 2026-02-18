@@ -1,0 +1,18 @@
+---
+import WhatsappButton from '../components/WhatsappButton.astro'
+import Compromiso from '../components/tratamiento/Compromiso.astro'
+import Layout from '../layouts/Layout.astro'
+import Footer from '../sections/Footer.astro'
+import Header from '../sections/Header.astro'
+---
+
+<Layout title='Conectamos'>
+  <div class='flex min-h-screen flex-col'>
+    <Header />
+    <div class='grow'>
+      <Compromiso />
+    </div>
+    <Footer />
+    <WhatsappButton />
+  </div>
+</Layout>

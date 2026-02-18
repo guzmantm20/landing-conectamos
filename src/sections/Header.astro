@@ -1,0 +1,150 @@
+---
+// Header.astro
+const navItems = [
+  { name: 'Inicio', href: '/' },
+  { name: 'Planes', href: '/#planes' },
+  { name: 'Cobertura', href: '/cobertura' },
+  { name: 'Tratamiento', href: '/tratamiento-de-datos' }, // Nombre corto para móvil
+  { name: 'Seguridad', href: '/seguridad' },
+  { name: 'Internet sano', href: '/internet-sano' },
+]
+---
+
+<header
+  class='fixed w-full bg-white/90 backdrop-blur-md z-100 border-b border-gray-100'
+>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6'>
+    <div class='flex justify-between items-center py-3 md:py-4'>
+      <a href='/' class='flex items-center space-x-2 shrink-0'>
+        <img
+          class='w-10 h-10 md:w-12 md:h-12'
+          src='/logo.webp'
+          alt='Conectamos Logo'
+        />
+        <span class='text-lg md:text-xl font-bold text-[#F96302] tracking-tight'
+          >Conectamos</span
+        >
+      </a>
+
+      <nav class='hidden lg:flex space-x-6 xl:space-x-8'>
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class='text-sm xl:text-base font-medium text-gray-600 hover:text-[#0E74CE] transition-colors'
+            >
+              {item.name}
+            </a>
+          ))
+        }
+      </nav>
+
+      <div class='flex items-center space-x-4'>
+        <a
+          href='#contacto'
+          class='hidden md:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-bold text-white bg-[#F96302] hover:bg-[#e05a02] transition-all transform hover:scale-105 shadow-md shadow-[#F96302]/20'
+        >
+          Contratar
+        </a>
+
+        <button
+          id='menu-btn'
+          class='lg:hidden p-2 rounded-lg text-gray-600 hover:bg-gray-100 focus:outline-none'
+          aria-label='Abrir menú'
+        >
+          <svg
+            id='menu-icon'
+            class='w-7 h-7'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M4 6h16M4 12h16M4 18h16'></path>
+          </svg>
+          <svg
+            id='close-icon'
+            class='w-7 h-7 hidden'
+            fill='none'
+            stroke='currentColor'
+            viewBox='0 0 24 24'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M6 18L18 6M6 6l12 12'></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id='mobile-menu'
+    class='hidden lg:hidden bg-white border-b border-gray-100 absolute w-full left-0 shadow-xl animate-fade-down animate-duration-300'
+  >
+    <nav class='flex flex-col p-4 space-y-1'>
+      {
+        navItems.map((item) => (
+          <a
+            href={item.href}
+            class='block py-3 px-4 text-base font-semibold text-gray-700 hover:bg-[#0E74CE]/5 hover:text-[#0E74CE] rounded-xl transition-all'
+          >
+            {item.name}
+          </a>
+        ))
+      }
+      <div class='pt-4 pb-2'>
+        <a
+          href='#contacto'
+          class='block w-full py-4 text-center rounded-2xl bg-[#0E74CE] text-white font-bold shadow-lg'
+        >
+          Solicitar Servicio
+        </a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menu-btn')
+  const mobileMenu = document.getElementById('mobile-menu')
+  const menuIcon = document.getElementById('menu-icon')
+  const closeIcon = document.getElementById('close-icon')
+
+  menuBtn?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden')
+    menuIcon?.classList.toggle('hidden')
+    closeIcon?.classList.toggle('hidden')
+  })
+
+  // Cerrar menú al hacer clic en un enlace (ideal para anchors como #planes)
+  const navLinks = mobileMenu?.querySelectorAll('a')
+  navLinks?.forEach((link) => {
+    link.addEventListener('click', () => {
+      mobileMenu?.classList.add('hidden')
+      menuIcon?.classList.remove('hidden')
+      closeIcon?.classList.add('hidden')
+    })
+  })
+</script>
+
+<style>
+  @keyframes fade-down {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-down {
+    animation: fade-down 0.3s ease-out;
+  }
+</style>

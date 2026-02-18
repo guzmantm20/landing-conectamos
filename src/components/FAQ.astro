@@ -1,0 +1,54 @@
+---
+// FAQ.astro
+const faqs = [
+  {
+    q: '¿Cuánto tiempo tarda la instalación?',
+    a: 'Una vez aprobada tu solicitud, instalamos tu servicio en un plazo máximo de 24 horas hábiles por fibra o un plazo máximo de 48 horas hábiles por radioenlace.',
+  },
+  {
+    q: '¿Qué es la fibra óptica simétrica?',
+    a: 'Significa que tienes la misma velocidad para descargar (bajar archivos) que para cargar (enviar correos, subir videos). Es vital para gaming y home office.',
+  },
+  {
+    q: '¿Necesito comprar mi propio router?',
+    a: 'No, nosotros te entregamos un Router de última generación en comodato sin costo adicional. En caso de culminacion del contrato, el equipo debe ser devuelto en buen estado.',
+  },
+]
+---
+
+<section class='py-24 bg-[#F8FAFC]'>
+  <div class='max-w-3xl mx-auto px-4 sm:px-6'>
+    <h2 class='text-3xl font-extrabold text-[#1E293B] text-center mb-12'>
+      Dudas frecuentes
+    </h2>
+
+    <div class='space-y-4'>
+      {
+        faqs.map((faq) => (
+          <details class='group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm transition-all duration-300 open:ring-1 open:ring-primary'>
+            <summary class='flex justify-between items-center p-5 cursor-pointer list-none font-bold text-[#1E293B] hover:text-primary'>
+              {faq.q}
+              <span class='text-secondary transition-transform group-open:rotate-180'>
+                <svg
+                  xmlns='http://www.w3.org/2000/svg'
+                  class='h-5 w-5'
+                  fill='none'
+                  viewBox='0 0 24 24'
+                  stroke='currentColor'
+                >
+                  <path
+                    stroke-linecap='round'
+                    stroke-linejoin='round'
+                    stroke-width='2'
+                    d='M19 9l-7 7-7-7'
+                  />
+                </svg>
+              </span>
+            </summary>
+            <div class='px-5 pb-5 text-gray-600 leading-relaxed'>{faq.a}</div>
+          </details>
+        ))
+      }
+    </div>
+  </div>
+</section>

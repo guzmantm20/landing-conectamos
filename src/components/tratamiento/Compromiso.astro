@@ -1,0 +1,106 @@
+---
+// Normatividad.astro
+const leyes = [
+  {
+    name: 'Ley 679',
+    desc: 'Prevención contra la explotación sexual infantil en internet.',
+    link: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=18309',
+  },
+  {
+    name: 'Ley 1341',
+    desc: 'Principios y conceptos sobre la sociedad de la información.',
+    link: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=36913',
+  },
+  {
+    name: 'Ley 3066',
+    desc: 'Régimen de protección de los derechos de los usuarios.',
+    link: 'https://www.crcom.gov.co/system/files/Biblioteca%20Virtual/Documento%20soporte%3A%20RPU%20del%20Servicio%20de%20Televisi%C3%B3n%20y%20actualizaci%C3%B3n%20de%20la%20Resoluci%C3%B3n%20CRC%203066%20de%202011/2012_11_08_documentosoporte_actualizacion003066.pdf',
+  },
+  {
+    name: 'Ley 3067',
+    desc: 'Compendio de normas sobre telecomunicaciones.',
+    link: 'https://www.suin-juriscol.gov.co/viewDocument.asp?ruta=Resolucion/30044820',
+  },
+  {
+    name: 'Decreto 1704 (2012)',
+    desc: 'Normas para la captación y conservación de datos.',
+    link: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=48863',
+  },
+  {
+    name: 'Decreto 1524 (2002)',
+    desc: 'Regulación del acceso a internet para menores de edad.',
+    link: 'https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=5551',
+  },
+]
+---
+
+<section class='py-24 bg-[#F8FAFC]'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6'>
+    <div class='text-center mb-16'>
+      <h2 class='text-primary font-bold tracking-wide uppercase text-sm'>
+        Compromiso Legal
+      </h2>
+      <p class='mt-2 text-3xl font-extrabold text-[#1E293B] sm:text-4xl'>
+        Regulación y normatividad
+      </p>
+    </div>
+
+    <div class='flex flex-col md:flex-row gap-4'>
+      <div
+        class='flex flex-col w-full bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-gray-100 m-auto'
+      >
+        <h3
+          class='text-xl w-full items-center justify-center flex font-bold text-[#1E293B] mb-4'
+        >
+          Política de Protección de Datos
+        </h3>
+        <p class='text-gray-600 leading-relaxed text-lg'>
+          <strong>Conectams S.A.S.</strong>, manifiesta el compromiso con la
+          protección de los datos personales de terceros. Contamos con los
+          medios tecnológicos idóneos para asegurar que sean almacenados de
+          manera tal que se impida el acceso indeseado por parte de terceras
+          personas, asegurando la confidencialidad.
+        </p>
+        <p class='mt-4 text-gray-500 text-base'>
+          De conformidad con la <strong>Ley 1581 de 2012</strong> y su <strong
+            >Decreto 1377 de 2013</strong
+          >, sus datos están siendo tratados de acuerdo con nuestra política de
+          privacidad y seguridad de la información.
+        </p>
+      </div>
+
+      <div>
+        <div class='flex justify-center pt-8 items-center space-x-4 mb-10'>
+          <h3
+            class='text-lg font-bold text-[#1E293B] uppercase tracking-widest'
+          >
+            Documentos Legales
+          </h3>
+        </div>
+
+        <div class='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
+          {
+            leyes.map((ley) => (
+              <a
+                href={ley.link}
+                target='_blank'
+                class='group p-4 bg-white border border-gray-100 rounded-2xl hover:border-secondary hover:shadow-xl hover:scale-105 hover:shadow-secondary/5 transition-all flex items-center justify-between'
+              >
+                <div class='flex items-center space-x-4'>
+                  <div>
+                    <span class='block font-bold text-[#1E293B] group-hover:text-primary transition-colors'>
+                      {ley.name}
+                    </span>
+                    <span class='block text-xs text-balance text-gray-400 mt-1'>
+                      {ley.desc}
+                    </span>
+                  </div>
+                </div>
+              </a>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,30 @@
+---
+import WhatsappButton from '../components/WhatsappButton.astro'
+import Filtrado from '../components/seguridad/Filtrado.astro'
+import Red from '../components/seguridad/Red.astro'
+import Layout from '../layouts/Layout.astro'
+import Footer from '../sections/Footer.astro'
+import Header from '../sections/Header.astro'
+---
+
+<Layout title='Conectamos'>
+  <div class='flex min-h-screen flex-col'>
+    <Header />
+    <div class='grow py-24'>
+      <div class='max-w-7xl mx-auto px-4 sm:px-6'>
+        <div class='text-center mb-16'>
+          <h2 class='text-primary font-bold tracking-wide uppercase text-sm'>
+            Seguridad en la red
+          </h2>
+          <p class='mt-2 text-3xl font-extrabold text-[#1E293B] sm:text-4xl'>
+            Amenazas en la red
+          </p>
+        </div>
+        <Red />
+        <Filtrado />
+      </div>
+    </div>
+    <Footer />
+    <WhatsappButton />
+  </div>
+</Layout>

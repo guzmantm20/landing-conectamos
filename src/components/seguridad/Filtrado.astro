@@ -1,0 +1,119 @@
+---
+// FiltradoContent.astro
+const herramientas = [
+  {
+    name: 'Qustodio',
+    videoId: 'APsI422mny4',
+    desc: 'App gratuita ideal para el control parental en múltiples dispositivos.',
+  },
+  {
+    name: 'Norton Family Premier',
+    videoId: 'hzx3-TF-g0g',
+    desc: 'Portal completo para supervisar la actividad online de tus hijos.',
+  },
+  {
+    name: 'NetNanny',
+    videoId: '2e9fg4Pgqyk',
+    desc: 'Líder en filtrado de contenido dinámico y bloqueo de sitios.',
+  },
+  {
+    name: 'Kaspersky Safe Kids',
+    videoId: '-SCSrVWIL5U',
+    desc: 'Herramientas de seguridad avanzada y gestión de tiempo de pantalla.',
+  },
+]
+---
+
+<section class='py-24'>
+  <div class='max-w-7xl mx-auto px-4 sm:px-6'>
+    <div class='text-center mb-16'>
+      <h2 class='text-primary font-bold tracking-wide uppercase text-sm'>
+        Seguridad Familiar
+      </h2>
+      <p class='mt-2 text-3xl font-extrabold text-[#1E293B] sm:text-4xl'>
+        Mecanismos de filtrado
+      </p>
+    </div>
+
+    <div class='grid grid-cols-1 lg:grid-cols-3 gap-8 mb-16'>
+      <div
+        class='bg-white p-8 rounded-3xl border border-gray-100 flex flex-col justify-center text-center lg:text-left'
+      >
+        <div
+          class='w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 mx-auto lg:mx-0'
+        >
+          <svg
+            class='w-6 h-6 text-primary'
+            fill='none'
+            viewBox='0 0 24 24'
+            stroke='currentColor'
+          >
+            <path
+              stroke-linecap='round'
+              stroke-linejoin='round'
+              stroke-width='2'
+              d='M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z'
+            ></path>
+          </svg>
+        </div>
+        <p class='text-gray-600 leading-relaxed italic'>
+          "La Ley 679 de 2001 promulga el interés de proteger a los infantes de
+          acceder a sitios con contenido para adultos."
+        </p>
+      </div>
+
+      <div
+        class='lg:col-span-2 bg-white p-8 rounded-3xl border border-gray-100 shadow-sm'
+      >
+        <h3 class='text-xl font-bold text-[#1E293B] mb-4'>
+          Protección proactiva
+        </h3>
+        <div
+          class='grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-600 leading-relaxed'
+        >
+          <p>
+            Pese al crecimiento de Internet, existen métodos y herramientas que
+            pueden filtrar contenidos no deseados y así proteger a los menores
+            de edad.
+          </p>
+          <p>
+            Los programas de filtrado permiten una completa funcionalidad.
+            Muchos ofrecen periodos de prueba para asegurar que satisfacen las
+            necesidades de su hogar antes de adquirirlos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class='grid grid-cols-1 md:grid-cols-2 gap-8'>
+      {
+        herramientas.map((item) => (
+          <div class='group bg-white p-6 rounded-3xl hover:border-secondary border border-gray-100 transition-all hover:shadow-xl'>
+            <div class='flex items-center justify-between mb-4'>
+              <h4 class='text-lg font-bold text-[#1E293B] group-hover:text-primary transition-colors'>
+                {item.name}
+              </h4>
+              <span class='text-xs font-semibold px-3 py-1 bg-[#F8FAFC]  rounded-full text-secondary border border-gray-100 italic'>
+                Control Parental
+              </span>
+            </div>
+
+            <div class='relative w-full pb-[56.25%] h-0 rounded-2xl overflow-hidden shadow-md mb-4 bg-black'>
+              <iframe
+                class='absolute top-0 left-0 w-full h-full'
+                src={`https://www.youtube.com/embed/${item.videoId}`}
+                title={item.name}
+                frameborder='0'
+                allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share'
+                referrerpolicy='strict-origin-when-cross-origin'
+                allowfullscreen
+              />
+            </div>
+
+            <p class='text-sm text-gray-500'>{item.desc}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,39 @@
+---
+const amenazas = [
+  {
+    name: 'Malware',
+    des: 'Es un término general que se utiliza para referirse a distintas formas de software hostil, intrusivo o molesto.El software malintencionado o malware es un software creado por hackers para perturbar las operaciones de una computadora, obtener información confidencial o acceder a sistemas informáticos privados. El malware incluye virus informáticos, gusanos, troyanos, spyware, adware, la mayoría de rootkits y otros programas malintencionados.',
+  },
+  {
+    name: 'Phishing',
+    des: 'Es una técnica de ingeniería social utilizada por ciberdelincuentes para engañar a las personas y obtener información confidencial, como contraseñas, números de tarjetas de crédito o datos personales. El phishing se lleva a cabo a través de correos electrónicos, mensajes de texto o sitios web falsos que imitan a entidades legítimas, como bancos o servicios en línea.',
+  },
+  {
+    name: 'Ransomware',
+    des: 'Es un tipo de malware que cifra los archivos de una víctima y exige un rescate, generalmente en criptomonedas, para restaurar el acceso a los datos. El ransomware puede propagarse a través de correos electrónicos maliciosos, vulnerabilidades de software o sitios web comprometidos.',
+  },
+  {
+    name: 'Ataques DDoS',
+    des: 'Un ataque de denegación de servicio distribuida (DDoS) es un intento malicioso de interrumpir el tráfico normal de un servidor, servicio o red al abrumarlo con una avalancha de tráfico de Internet. Los ataques DDoS pueden ser llevados a cabo por botnets, que son redes de dispositivos comprometidos controlados por un atacante.',
+  },
+  {
+    name: 'Pharming',
+    des: 'Es una técnica de ciberdelincuencia que redirige a los usuarios de un sitio web legítimo a un sitio web falso sin su conocimiento. El objetivo del pharming es obtener información confidencial, como contraseñas o datos de tarjetas de crédito, al engañar a los usuarios para que ingresen sus datos en el sitio falso.',
+  },
+  {
+    name: 'Spam',
+    des: 'Es el envío masivo de mensajes no solicitados, generalmente con fines publicitarios, pero también puede ser utilizado para propagar malware o realizar ataques de phishing. El spam puede llegar a través de correos electrónicos, mensajes de texto o redes sociales.',
+  },
+]
+---
+
+<section class='max-w-7xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8'>
+  {
+    amenazas.map((amenaza) => (
+      <div class='bg-white p-6 rounded-lg shadow-md border border-gray-100 hover:scale-105 hover:border-secondary transition-all'>
+        <h3 class='text-xl font-bold text-[#1E293B] mb-4'>{amenaza.name}</h3>
+        <p class='text-gray-600 leading-relaxed text-balance'>{amenaza.des}</p>
+      </div>
+    ))
+  }
+</section>

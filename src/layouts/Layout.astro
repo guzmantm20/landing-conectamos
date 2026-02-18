@@ -1,23 +1,29 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import '../global.css'
+interface Props {
+  title: string
+}
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width' />
+    <meta
+      name='description'
+      content='Servicio de internet fibra óptica confiable y veloz en Santander. Planes hogar y negocio con WiFi ilimitado. Instalación rápida y sin costo. ¡Cotiza tu conexión ahora!'
+    />
+    <meta name='author' content='Conectamos' />
+    <meta
+      name='keywords'
+      content='internet fibra óptica, planes de internet hogar, planes de internet negocio, WiFi ilimitado, instalación de internet, conexión rápida, cotizar internet'
+    />
+    <title>{title}</title>
+  </head>
+  <body class='bg-background text-brand font-sans'>
+    <slot />
+  </body>
+</html>
